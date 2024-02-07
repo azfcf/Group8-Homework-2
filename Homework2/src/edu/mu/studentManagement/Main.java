@@ -3,7 +3,7 @@ package edu.mu.studentManagement;
 import edu.mu.studentManager.StudentManager;
 
 public class Main {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         // Instantiate StudentManager, perform operations based on the requirements.
         StudentManager studentManager = new StudentManager();
         // Read student data from a file and initialize Student objects.

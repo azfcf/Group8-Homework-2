@@ -13,7 +13,7 @@ public class StudentManager {
 				return true;
 			}
 		}
-		// If no student is found, display a method
+		// If no student is found, display a message
 		System.out.println("No student found with ID " + id);
 		return false;
 	}
