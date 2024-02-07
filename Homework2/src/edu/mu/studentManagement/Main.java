@@ -1,12 +1,6 @@
 package edu.mu.studentManagement;
 
-<<<<<<< HEAD
-
-
-public class Main {
-=======
 import edu.mu.studentManager.StudentManager;
->>>>>>> branch 'main' of git@github.com:azfcf/Group8-Homework-2.git
 
 public class Main {
     public static void main(String[] args) {
