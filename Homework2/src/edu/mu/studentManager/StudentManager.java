@@ -35,7 +35,7 @@ public class StudentManager {
     }
 	
 	public boolean updateStudentGradeById(int id, double grade) { 
-		if ( student == null || students.length == 0) {// test to see if student exsist or if students array has a student in it at all 
+		if ( students == null || students.length == 0) {// test to see if student exsist or if students array has a student in it at all 
 			System.out.println("No Student to Update.");
 			return false;
 		}
@@ -52,7 +52,7 @@ public class StudentManager {
 			 }
 		}
 		else {
-			System.out.println("Can not find a student with ID" + id + " please insert working Id #")// failes to find student with id 
+			System.out.println("Can not find a student with ID" + id + " please insert working Id #");// failes to find student with id 
 		}
 		return false ;
 	}
