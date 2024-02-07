@@ -46,7 +46,7 @@ public class StudentManager {
 			 for (Student student : students) {// loop through students 
 				 if (student.getId()==id) {// check to make sure ID match 
 				 student.setGrade(grade);// change grade 
-				 System.out.println("Student Grade updated");
+				 System.out.println("Student Grade updated");//print
 				 return true;
 				 }
 			 }
