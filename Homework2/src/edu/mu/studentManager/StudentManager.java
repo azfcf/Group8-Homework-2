@@ -6,6 +6,11 @@ public class StudentManager {
 	private Student[] students;
 	
 	public boolean searchStudentById(int id) {
+		// Check if the array is null or empty
+		if (students == null || students.length == 0) {
+			System.out.print("No students to display");
+			return false;
+		}
 		// Search through the array of students for the specified ID
 		for(Student student : students) {
 			if(student.getId() == id) { 
