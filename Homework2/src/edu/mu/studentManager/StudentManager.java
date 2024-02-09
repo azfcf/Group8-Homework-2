@@ -42,7 +42,7 @@ public class StudentManager {
 					//adds student object to array
 					students[i] = student;
 					
-					System.out.println(students[i].toString());
+					//System.out.println(students[i].toString());
 				}
 				else { //EOF has been reached
 					break;
