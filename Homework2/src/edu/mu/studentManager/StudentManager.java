@@ -84,8 +84,11 @@ public class StudentManager {
             System.out.println("Details of Students:");
             //Go through the students array
             for (Student student : students) {
-            	//Print out the details of each student using the .toString() method
-                System.out.println(student.toString());
+            	//Check if current student is not null
+            	if (student != null) {
+            		//Print out the details of each student using the .toString() method
+                	System.out.println(student.toString());
+            	}
             }
         }
     }
