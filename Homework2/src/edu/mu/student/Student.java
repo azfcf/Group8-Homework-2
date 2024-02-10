@@ -1,6 +1,7 @@
 package edu.mu.student;
 
 public class Student {
+	
 	private int id; 
 	private String name;
 	private double grade;

@@ -14,14 +14,7 @@ public class StudentManager {
 
 
 	public boolean readFromFile(String fileName) {
-		
-		/*
-		 * Goals
-		 * -read input from a file
-		 * -initialize student objects
-		 * -return true if file was read successfully
-		 * -false if file was not read successfully
-		 */
+
 		try {
 			
 			File studentData = new File(fileName);
@@ -42,18 +35,17 @@ public class StudentManager {
 					//adds student object to array
 					students[i] = student;
 					
-					//System.out.println(students[i].toString());
 				}
 				else { //EOF has been reached
 					break;
 				}
 			}
 			fileScanner.close();
-			return true;
-		} catch (FileNotFoundException e) {
+			return true; //successfully opened file and initialized student objects
+		} catch (FileNotFoundException e) { // in case file cannot be opened
 			System.out.println("FILE COULD NOT BE OPENED!");
 		}
-		return false;
+		return false; //did not successfully open file and initialize student objects
 	}
 	
 	public boolean searchStudentById(int id) {
