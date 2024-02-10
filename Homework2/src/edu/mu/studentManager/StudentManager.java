@@ -57,21 +57,33 @@ public class StudentManager {
 	}
 	
 	public boolean searchStudentById(int id) {
-		// Check if the array is null or empty
-		if (students == null || students.length == 0) {
-			System.out.print("No students to display");
-			return false;
-		}
-		// Search through the array of students for the specified ID
-		for(Student student : students) {
-			if(student.getId() == id) { 
-				System.out.println(student.toString()); // Display the student details
-				return true;
-			}
+		// Call findStudentByID method to search for students with given ID
+		Student student = findStudentByID(id);
+		// If a student is found, display the student details
+		if(student != null) {
+			System.out.println(student.toString()); // Display the student details
+			return true;
 		}
 		// If no student is found, display a message
 		System.out.println("No student found with ID " + id);
 		return false;
+	}
+	
+	private Student findStudentByID(int id) {
+		// Check if the array is null or empty
+		if (students == null || students.length == 0) {
+			System.out.print("No students to display");
+			return null;
+		}
+		
+		// Search through the array of students for the specified ID
+		for(Student student : students) {
+			if(student.getId() == id) { 
+				return student;
+			}
+		}
+
+		return null;
 	}
 
 	public void displayStudents() {
@@ -94,26 +106,14 @@ public class StudentManager {
     }
 	
 	public boolean updateStudentGradeById(int id, double grade) { 
-		if ( students == null || students.length == 0) {// test to see if student exsist or if students array has a student in it at all 
-			System.out.println("No Student to Update.");
-			return false;
-		}
+		Student student = findStudentByID(id);
 		
-		boolean studentDoesExist = searchStudentById(id);// call  searchStudent function to check if the id that was inserted matches with the id of a student in the array 
-		if (studentDoesExist) {// if student does exist then go to change grade 
-			
-			 for (Student student : students) {// loop through students 
-				 if (student.getId()==id) {// check to make sure ID match 
-				 student.setGrade(grade);// change grade 
-				 System.out.println("Student Grade updated");//print
-				 return true;
-				 }
-			 }
+		if(student != null) {
+			 student.setGrade(grade);// change grade 
+			 return true;
 		}
-		else {
-			System.out.println("Can not find a student with ID" + id + " please insert working Id #");// failes to find student with id 
-		}
-		return false ;
+		System.out.println("Can not find a student with ID" + id + " please insert working Id #");// failes to find student with id 
+		return false;
 	}
 
 }
